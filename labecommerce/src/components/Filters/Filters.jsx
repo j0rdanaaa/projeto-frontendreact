@@ -1,9 +1,25 @@
-import {React} from 'react'
+import { React } from "react";
 
-export default function Filter(){
-    return(
-        <div>
-            <p>Filter</p>
-        </div>
-    )
+import { SectionStyle } from "./FilterStyle";
+
+export default function Filters() {
+  return (
+    <SectionStyle>
+      <h2>Filters</h2>
+      <div>
+        <p>Valor mínimo:</p>
+        <input></input>
+      </div>
+
+      <div>
+        <p>Valor máximo:</p>
+        <input></input>
+      </div>
+
+      <div>
+        <p>Busca por nome:</p>
+        <input></input>
+      </div>
+    </SectionStyle>
+  );
 }
