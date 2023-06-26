@@ -1,17 +1,23 @@
-import Filters from './components/Filters/Filters'
-import Home from './components/Home/Home'
-import Cart from './components/Cart/Cart'
-
+import React from "react";
+import Filters from "./components/Filters/Filters";
+import Home from "./components/ProductList/Home/Home";
+import Card from "./components/ShoppingCart/Cart/Cart";
+import Product from "./components/assents/productsList";
+import { All } from "./AppStyled";
+import GlobalStyle from "./GlobalStyle";
 
 function App() {
   return (
-    <div >
+    <>
+      <All />
+      <GlobalStyle/>
+
       <Filters />
-      <Home />
-      <Cart />
+      <Home Produto={Product} />
+      <Card />
 
-    </div>
+      <All />
+    </>
   );
-}
-
+};
 export default App;
