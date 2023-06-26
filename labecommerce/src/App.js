@@ -1,30 +1,26 @@
 import React from "react";
-import GlobalStyles from "./components/ShoppingCart/Items/ItemsStyle";
 import Filters from "./components/Filters/Filters";
 import Home from "./components/ProductList/Home/Home";
-import ProductCard from "./components/ProductList/ProductCard/ProductCard";
-import Cart from "./components/ShoppingCart/Cart/Cart";
-import { Items } from "./components/ShoppingCart/Items/Items";
+import Card from "./components/ShoppingCart/Cart/Cart";
+import Product from "./components/assents/productsList";
+import { All } from "./AppStyled";
+import GlobalStyle from "./GlobalStyle";
 
-const App = () => {
+function App() {
   return (
     <>
-      <GlobalStyles />
+      <All />
+      <GlobalStyle/>
 
-      <div className="App">
-        <Filters />
+      <Filters />
+      <Home Produto={Product} />
+      <Card />
 
-        <div>
-          <Home />
-          <ProductCard />
-        </div>
-
-        <div>
-          <Cart />
-          <Items />
-        </div>
-      </div>
+      <All />
     </>
+  );
+};
+
   );
 };
 

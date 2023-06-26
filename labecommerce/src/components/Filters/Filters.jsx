@@ -1,25 +1,25 @@
-import { React } from "react";
-
-import { SectionStyle } from "./FilterStyle";
+import React from "react";
+import {
+  FiltroInput,
+  TitulosPagina,
+  FiltroPagina,
+  SectionStyle,
+} from "./FilterStyled";
 
 export default function Filters() {
   return (
     <SectionStyle>
-      <h2>Filters</h2>
-      <div>
-        <p>Valor mínimo:</p>
-        <input></input>
-      </div>
+      <FiltroPagina>Filters</FiltroPagina>
 
-      <div>
-        <p>Valor máximo:</p>
-        <input></input>
-      </div>
+      <TitulosPagina htmlFor="textMin">Valor mínimo:</TitulosPagina>
+      <FiltroInput type="number" id="textMin" name="textMin" />
 
-      <div>
-        <p>Busca por nome:</p>
-        <input></input>
-      </div>
+      <TitulosPagina htmlFor="textMax">Valor máximo:</TitulosPagina>
+      <FiltroInput type="number" id="textMax" name="textMax" />
+
+      <TitulosPagina htmlFor="textNome">Busca por nome:</TitulosPagina>
+      <FiltroInput type="text" id="textNome" name="textNome" />
     </SectionStyle>
   );
 }
+

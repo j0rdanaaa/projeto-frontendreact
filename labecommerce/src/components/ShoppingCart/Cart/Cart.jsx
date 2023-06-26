@@ -1,5 +1,7 @@
 import React from 'react'
-import { CartStyles } from './CartStyle'
+import { CartStyles } from './CartStyled'
+import Items from '../Items/Items'
+
 
 export default function Cart() {
   return (
@@ -11,6 +13,7 @@ export default function Cart() {
         <p>Nome do Produto</p>
         <button>Remover</button>
       </div>
+
       <p>Valor Total: 0</p>
     </CartStyles>
 
