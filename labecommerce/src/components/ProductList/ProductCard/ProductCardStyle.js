@@ -22,3 +22,4 @@ export const StylesProductCard = styled.div`
     margin-bottom: 10px;
   }
 `;
+
