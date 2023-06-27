@@ -6,6 +6,8 @@ import {
   SectionStyle,
 } from "./FilterStyled";
 
+
+
 export default function Filters() {
   return (
     <SectionStyle>

@@ -1,21 +1,24 @@
 import styled from "styled-components";
 
 export const HomeStyles = styled.div`
- grid-column: 3/11;
-    border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  height: 85vh;
+  width: 70vw;
 `;
 
 export const InfoStyles = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 10px 0 5px 0;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   div {
     display: flex;
-        justify-self: end;
+    align-items: center;
   }
 `;
 
 export const CardStyles = styled.div`
- display: flex;
+  display: flex;
 `;

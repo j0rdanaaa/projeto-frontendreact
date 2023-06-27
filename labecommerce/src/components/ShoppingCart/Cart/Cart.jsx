@@ -9,6 +9,7 @@ export default function Cart() {
     <CartStyles>
       <h2>Cart</h2>
       <div>
+        <Items/>
         <p>x0</p>
         <p>Nome do Produto</p>
         <button>Remover</button>
