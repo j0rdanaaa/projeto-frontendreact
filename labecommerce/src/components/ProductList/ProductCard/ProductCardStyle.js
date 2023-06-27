@@ -4,10 +4,10 @@ export const StylesProductCard = styled.div`
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 25px;
   gap: 10px;
   height: auto;
-  width: 20vw;
+  width: 40vw;
   align-self: center;
   img {
     border: 1px solid black;
@@ -22,4 +22,3 @@ export const StylesProductCard = styled.div`
     margin-bottom: 10px;
   }
 `;
-
