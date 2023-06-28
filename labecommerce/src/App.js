@@ -7,15 +7,15 @@ import GlobalStyle from "./GlobalStyle";
 import { useState } from "react";
 import Product from "./assents/productsList";
 
-
 function App() {
-  const [cart, setCart] = useState("");
-  const [amount, setAmount] = useState("");
   const [minFilter, setMinFilter] = useState("");
   const [maxFilter, setMaxFilter] = useState("");
   const [searchFilter, setSearchFilter] = useState("");
+  const [cart, setCart] = useState("");
+  const [amount, setAmount] = useState("");
 
-   
+
+
 
   return (
     <>
@@ -30,19 +30,20 @@ function App() {
         searchFilter={searchFilter}
         setSearchFilter={setSearchFilter}
       />
-      <Home 
-        produto={Product}
-        amount={amount}
-        setAmont={setAmount}
+
+      <Home
+        Produto={Product}
         cart={cart}
         setCart={setCart}
+        amount={amount}
+        setAmount={setAmount}
       />
       <Card
-        amount={amount}
-        setAmont={setAmount}
         cart={cart}
         setCart={setCart}
-      />
+        amount={amount}
+        setAmount={setAmount}
+
 
       <All />
     </>
