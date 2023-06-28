@@ -12,4 +12,5 @@ export default function ProductCard(props) {
         <button>Adicionar ao Carrinho</button>
       </StylesProductCard>
     </>
-  ));
+  ))
+};
