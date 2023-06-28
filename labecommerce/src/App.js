@@ -2,10 +2,10 @@ import React from "react";
 import Filters from "./components/Filters/Filters";
 import Home from "./components/ProductList/Home/Home";
 import Card from "./components/ShoppingCart/Cart/Cart";
-import Product from "./components/assents/productsList";
 import { All } from "./AppStyled";
 import GlobalStyle from "./GlobalStyle";
 import { useState } from "react";
+import Product from "./assents/productsList";
 
 function App() {
   const [minFilter, setMinFilter] = useState("");
@@ -13,6 +13,9 @@ function App() {
   const [searchFilter, setSearchFilter] = useState("");
   const [cart, setCart] = useState("");
   const [amount, setAmount] = useState("");
+
+
+
 
   return (
     <>
@@ -27,6 +30,7 @@ function App() {
         searchFilter={searchFilter}
         setSearchFilter={setSearchFilter}
       />
+
       <Home
         Produto={Product}
         cart={cart}
@@ -39,7 +43,7 @@ function App() {
         setCart={setCart}
         amount={amount}
         setAmount={setAmount}
-      />
+
 
       <All />
     </>

@@ -16,6 +16,7 @@ export default function Filters(props) {
     setSearchFilter,
   } = props;
 
+
   return (
     <SectionStyle>
       <FiltroPagina>Filters</FiltroPagina>
