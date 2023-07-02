@@ -1,25 +1,47 @@
-import React from "react";
-import {
-  FiltroInput,
-  TitulosPagina,
-  FiltroPagina,
-  SectionStyle,
-} from "./FilterStyled";
+import { Filters, Form } from "./FilterStyle";
 
-export default function Filters() {
+function Filter(props) {
+  const { searchFilter } = props;
+  const { minFilter } = props;
+  const { maxFilter } = props;
+  const handleSearch = (e) => {
+    props.setSearchFilter(e.target.value);
+  };
+  const handleMin = (e) => {
+    props.setMinFilter(e.target.value);
+  };
+  const handleMax = (e) => {
+    props.setMaxFilter(e.target.value);
+  };
+
   return (
-    <SectionStyle>
-      <FiltroPagina>Filters</FiltroPagina>
+    <Filters>
+      <h1>Busca</h1>
+      <Form>
+        <label>Valor mínimo:</label>
+        <input
+          type="number"
+          placeholder="mínimo"
+          onChange={handleMin}
+          value={minFilter}
+        />
 
-      <TitulosPagina htmlFor="textMin">Valor mínimo:</TitulosPagina>
-      <FiltroInput type="number" id="textMin" name="textMin" />
-
-      <TitulosPagina htmlFor="textMax">Valor máximo:</TitulosPagina>
-      <FiltroInput type="number" id="textMax" name="textMax" />
-
-      <TitulosPagina htmlFor="textNome">Busca por nome:</TitulosPagina>
-      <FiltroInput type="text" id="textNome" name="textNome" />
-    </SectionStyle>
+        <label>Valor máximo:</label>
+        <input
+          type="number"
+          placeholder="máximo"
+          onChange={handleMax}
+          value={maxFilter}
+        />
+        <label>Busca por nome:</label>
+        <input
+          type="text"
+          placeholder="Busca por nome"
+          onChange={handleSearch}
+          value={searchFilter}
+        />
+      </Form>
+    </Filters>
   );
 }
-
+export default Filter;

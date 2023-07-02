@@ -1,13 +1,11 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-export const CartStyles = styled.section`
-    /* display: grid; */
-    border: solid 1px black;
+export const CartStyles = styled.div`
+    display: flex;
+    flex-direction: column;
     margin: 10px;
-    margin-top: 2px;
-    height: 350px;
-    div {
-        display: flex;
-        gap: 5px;
-    }
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid #000;
+    height: 450px;
 `
