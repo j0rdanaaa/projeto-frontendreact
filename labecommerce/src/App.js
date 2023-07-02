@@ -2,7 +2,7 @@ import React from "react";
 import Filters from "./components/Filters/Filters";
 import Home from "./components/ProductList/Home/Home";
 import Card from "./components/ShoppingCart/Cart/Cart";
-import products from "./components/assents/productsList";
+import products from "./assents/productsList";
 import GlobalStyle from "./GlobalStyle";
 import { useState } from "react";
 import { Header } from "./components/ProductList/Home/HomeStyle";

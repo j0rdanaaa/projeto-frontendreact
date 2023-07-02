@@ -1,4 +1,4 @@
-import { Filters, Form } from "./FilterStyle";
+import { Filters, Form } from "./FilterStyled";
 
 function Filter(props) {
   const { searchFilter } = props;
