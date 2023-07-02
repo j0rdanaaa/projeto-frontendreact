@@ -1,25 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const SectionStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border: 1px solid black;
-  width: 15vw;
-`;
+export const Filters = styled.div `
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid #000;
+    height: 300px;
+`
 
-export const FiltroPagina = styled.h2`
-  font-size: large;
-  font-weight: 550;
-  margin-top: 20px;
-  margin-left: 15px;
-`;
-
-export const TitulosPagina = styled.label`
-  margin: 3px 5px;
-`;
-
-export const FiltroInput = styled.input`
-  width: 60%;
-  margin-left: 15px;
-`;
+export const Form = styled.form `
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    gap: 10px;
+    width: 70%;
+`

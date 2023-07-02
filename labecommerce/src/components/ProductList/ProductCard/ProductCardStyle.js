@@ -1,24 +1,27 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const StylesProductCard = styled.div`
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  margin: 25px;
-  gap: 10px;
-  height: auto;
-  width: 40vw;
-  align-self: center;
-  img {
-    border: 1px solid black;
-    height: auto;
-    width: auto;
-  }
-  p {
-    margin-left: 10px;
-  }
-  button {
-    align-self: center;
-    margin-bottom: 10px;
-  }
-`;
+export const Card = styled.div`
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid #000;
+    width: 18vw;
+    
+    img{
+        width: 200px;
+    }
+`
+export const Dados = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    
+    button{
+        width: 150px;
+        margin: 20px;
+    }
+`
