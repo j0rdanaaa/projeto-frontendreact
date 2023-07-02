@@ -6,6 +6,7 @@ function Cart(props) {
   const { cart } = props;
   const { amount } = props;
   const { removeCart } = props;
+  const { produto } = props;
 
   return (
     <CartStyles>
@@ -24,11 +25,12 @@ function Cart(props) {
           />
         );
       })}
-
+      
       <p>
         Valor total:{" "}
         {amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}{" "}
       </p>
+        <button onClick={() => removeCart({ produto })}>Remover</button>
     </CartStyles>
   );
 }
