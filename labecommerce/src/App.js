@@ -4,9 +4,9 @@ import Home from "./components/ProductList/Home/Home";
 import Card from "./components/ShoppingCart/Cart/Cart";
 import products from "./assents/productsList";
 import GlobalStyle from "./GlobalStyle";
-import { useState } from "react";
 import { Header } from "./components/ProductList/Home/HomeStyle";
 import { All } from "./AppStyled";
+import { useEffect, useState } from 'react';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -14,6 +14,26 @@ function App() {
   const [minFilter, setMinFilter] = useState("");
   const [maxFilter, setMaxFilter] = useState("");
   const [searchFilter, setSearchFilter] = useState("");
+
+  useEffect(()=>{
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    const savedAmount = JSON.parse(localStorage.getItem("amount"));
+    console.log(savedAmount)
+    if(savedCart){
+      setCart(savedCart);
+      setAmount(savedAmount);
+    } else{
+      setCart([])
+      setAmount(0)
+    }
+  }, []);
+
+  useEffect(()=>{
+    if(cart.length>0){
+      localStorage.setItem("cart",JSON.stringify(cart));
+      localStorage.setItem("amount",JSON.stringify(amount));
+    }
+  }, [cart]);
 
   function addCart (productAdd) {
     const item = cart.find((produto) => produto.id === productAdd.produto.id);
