@@ -62,7 +62,7 @@ export default function Home(props) {
                 name={produto.name}
                 valor={produto.value}
                 img={produto.imageUrl}
-                Pro={produto}
+                produto={produto}
               />
             );
           })}

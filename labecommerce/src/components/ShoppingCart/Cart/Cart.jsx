@@ -2,14 +2,14 @@ import React from "react";
 import { CartStyles } from "./CartStyle";
 import Itens from "../Items/Items";
 
- function Cart(props) {
+function Cart(props) {
   const { cart } = props;
   const { amount } = props;
   const { removeCart } = props;
 
   return (
     <CartStyles>
-      <h1>Cart</h1>
+      <h1>Carrinho</h1>
       {cart.map((produto) => {
         return (
           <Itens
@@ -25,8 +25,11 @@ import Itens from "../Items/Items";
         );
       })}
 
-<p>Valor total: {amount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </p>
+      <p>
+        Valor total:{" "}
+        {amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}{" "}
+      </p>
     </CartStyles>
   );
 }
- export default Cart;
+export default Cart;

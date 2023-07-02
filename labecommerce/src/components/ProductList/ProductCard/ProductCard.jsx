@@ -13,7 +13,12 @@ function ProductCard(props) {
         <p>{props.valor}</p>
 
         <button onClick={() => addCart({ produto })}>
-        <p>{props.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+          <p>
+            {props.valor.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </p>
         </button>
       </Dados>
     </Card>
