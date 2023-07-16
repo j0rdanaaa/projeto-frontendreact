@@ -1,25 +1,71 @@
-import React from "react";
-import { HomeStyles, CardStyles, InfoStyles } from "./HomeStyled";
 import ProductCard from "../ProductCard/ProductCard";
+import { HomeStyle, Header, Container, Select } from "./HomeStyle";
+import React, { useState } from "react";
+function Home(props) {
+  const [ordination, setOrdination] = useState("");
+  const { myProducts } = props;
+  const { searchFilter } = props;
+  const { minFilter } = props;
+  const { maxFilter } = props;
+  const { addCart } = props;
 
-export default function Home(props) {
-  const { Produto } = props;
+  const handleOrdem = (e) => {
+    setOrdination(e.target.value);
+  };
   return (
-    <HomeStyles>
-      <InfoStyles>
-        <h3>Quantidade de produtos:</h3>
-        <div>
-          <h4>Ordenação:</h4>
-          <select name="orderSelection">
-            <option value="Crescente">Crescente</option>
-            <option value="Decrescente">Decrescente</option>
-          </select>
-        </div>
-      </InfoStyles>
+    <HomeStyle>
+      <Header>
+        <p>Quantidade de produtos: {myProducts.lenght}</p>
 
-      <CardStyles>
-        <ProductCard Produto={Produto} />
-      </CardStyles>
-    </HomeStyles>
+        <label>
+          Ordenação:
+          <Select value={ordination} onChange={handleOrdem}>
+            <option value={"Crescente"}>Crescente</option>
+            <option value={"Decrescente"}>Decrescente</option>
+          </Select>
+        </label>
+      </Header>
+
+      <Container>
+        {myProducts
+          .sort((produtoA, produtoB) => {
+            if (ordination === "Crescente" && produtoA.name < produtoB.name) {
+              return -1;
+            } else if (
+              ordination === "Decrescente" &&
+              produtoA.name > produtoB.name
+            ) {
+              return -1;
+            } else {
+              return 0;
+            }
+          })
+          .filter((produto) => {
+            return produto.name
+              .toLowerCase()
+              .includes(searchFilter.toLowerCase());
+          })
+          .filter((produto) => {
+            if (produto.value >= minFilter && produto.value <= maxFilter) {
+              return produto.value >= minFilter && produto.value <= maxFilter;
+            } else {
+              return produto;
+            }
+          })
+          .map((produto, index) => {
+            return (
+              <ProductCard
+                key={index}
+                addCart={addCart}
+                name={produto.name}
+                valor={produto.value}
+                img={produto.imageUrl}
+                produto={produto}
+              />
+            );
+          })}
+      </Container>
+    </HomeStyle>
   );
 }
+export default Home;

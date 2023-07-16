@@ -1,21 +1,32 @@
-import React from 'react'
-import { CartStyles } from './CartStyled'
-import Items from '../Items/Items'
+import Itens from "../Items/Items";
+import { CartStyle } from "./CartStyle";
+import React from "react";
 
+function Cart(props) {
+  const { cart } = props;
+  const { amount } = props;
+  const { removeCart } = props;
 
-export default function Cart() {
   return (
+    <CartStyle>
+      <h1>Viagens</h1>
+      {cart.map((produto) => {
+        return (
+          <Itens
+            key={produto.id}
+            cart={cart}
+            produto={produto}
+            removeCart={removeCart}
+            name={produto.name}
+            valor={produto.value}
+            id={produto.id}
+            qtd={produto.qtd}
+          />
+        );
+      })}
 
-    <CartStyles>
-      <h2>Cart</h2>
-      <div>
-        <p>x0</p>
-        <p>Nome do Produto</p>
-        <button>Remover</button>
-      </div>
-
-      <p>Valor Total: 0</p>
-    </CartStyles>
-
-  )
+      <p>Valor total: R$ {amount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+    </CartStyle>
+  );
 }
+export default Cart;

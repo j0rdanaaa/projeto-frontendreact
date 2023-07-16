@@ -1,12 +1,27 @@
-import { ItemsContainer } from "./ItemsStyled";
+import { ItemStyle } from './ItemsStyle'
 
-export default function Items() {
+function Itens(props) {
+  const { produto } = props
+  const { removeCart } = props
+
+
   return (
-    <ItemsContainer>
-      <h4>0x</h4>
-      <h4>Nome do Produto</h4>
-      <button>Remover</button>
+    <ul>
+    <ItemStyle >
 
-    </ItemsContainer>
-  );
+        <p>{props.name}: {props.qtd}</p>
+
+        <button
+            onClick={() => removeCart({produto})}
+        >Remover</button>
+
+        </ItemStyle>
+
+
+</ul>
+
+
+
+)
 }
+export default Itens;
