@@ -1,11 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
-
-export const ItemsContainer = styled.div`
-display: flex;
-gap: 10px;
-align-items: stretch;
-flex-direction: row;
-align-items: center
-;
+export const ItemStyle = styled.div`
+    display: grid;
+    grid-template-columns: 2fr 1fr;
 `

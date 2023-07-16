@@ -1,38 +1,51 @@
-import { Filters, Form } from "./FilterStyled";
+import React from "react";
+import { Filters, Form, StyleButton } from "./FilterStyle";
 
-function Filter(props) {
-  const { searchFilter } = props;
-  const { minFilter } = props;
-  const { maxFilter } = props;
-  const handleSearch = (e) => {
-    props.setSearchFilter(e.target.value);
-  };
-  const handleMin = (e) => {
-    props.setMinFilter(e.target.value);
-  };
-  const handleMax = (e) => {
-    props.setMaxFilter(e.target.value);
+function Filter({
+  minFilter,
+  setMinFilter,
+  maxFilter,
+  setMaxFilter,
+  searchFilter,
+  setSearchFilter,
+}) {
+  const handleSearch = (event) => {
+    setSearchFilter(event.target.value);
   };
 
+  const handleMin = (event) => {
+    setMinFilter(event.target.value);
+  };
+
+  const handleMax = (event) => {
+    setMaxFilter(event.target.value);
+  };
+
+  
   return (
     <Filters>
-      <h1>Busca</h1>
+      <h1>Filters</h1>
       <Form>
         <label>Valor mínimo:</label>
         <input
           type="number"
-          placeholder="mínimo"
-          onChange={handleMin}
+          placeholder="R$"
           value={minFilter}
+          min="1"
+          max="500"
+          onChange={handleMin}
         />
 
         <label>Valor máximo:</label>
         <input
           type="number"
-          placeholder="máximo"
-          onChange={handleMax}
+          placeholder="R$"
           value={maxFilter}
+          min="1"
+          max="500"
+          onChange={handleMax}
         />
+
         <label>Busca por nome:</label>
         <input
           type="text"
@@ -40,6 +53,7 @@ function Filter(props) {
           onChange={handleSearch}
           value={searchFilter}
         />
+        
       </Form>
     </Filters>
   );

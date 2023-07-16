@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
-export const CartStyles = styled.div`
+export const CartStyle = styled.div`
     display: flex;
     flex-direction: column;
     margin: 10px;

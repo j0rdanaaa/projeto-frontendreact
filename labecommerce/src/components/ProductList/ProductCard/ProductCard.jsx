@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, Dados } from "./ProductCardStyle";
 
 function ProductCard(props) {
@@ -13,16 +12,10 @@ function ProductCard(props) {
         <p>{props.valor}</p>
 
         <button onClick={() => addCart({ produto })}>
-          <p>
-            {props.valor.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </p>
+          Adicionar ao carrinho
         </button>
       </Dados>
     </Card>
   );
 }
-
 export default ProductCard;

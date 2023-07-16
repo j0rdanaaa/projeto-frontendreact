@@ -1,11 +1,9 @@
-import React from "react";
-import { HomeStyles, Header, Container, Select } from "./HomeStyle";
 import ProductCard from "../ProductCard/ProductCard";
-import { useState } from "react";
-
-export default function Home(props) {
+import { HomeStyle, Header, Container, Select } from "./HomeStyle";
+import React, { useState } from "react";
+function Home(props) {
   const [ordination, setOrdination] = useState("");
-  const { products } = props;
+  const { myProducts } = props;
   const { searchFilter } = props;
   const { minFilter } = props;
   const { maxFilter } = props;
@@ -15,9 +13,9 @@ export default function Home(props) {
     setOrdination(e.target.value);
   };
   return (
-    <HomeStyles>
+    <HomeStyle>
       <Header>
-        <p>Quantidade de produtos: {products.lenght}</p>
+        <p>Quantidade de produtos: {myProducts.lenght}</p>
 
         <label>
           Ordenação:
@@ -29,7 +27,7 @@ export default function Home(props) {
       </Header>
 
       <Container>
-        {products
+        {myProducts
           .sort((produtoA, produtoB) => {
             if (ordination === "Crescente" && produtoA.name < produtoB.name) {
               return -1;
@@ -67,6 +65,7 @@ export default function Home(props) {
             );
           })}
       </Container>
-    </HomeStyles>
+    </HomeStyle>
   );
 }
+export default Home;

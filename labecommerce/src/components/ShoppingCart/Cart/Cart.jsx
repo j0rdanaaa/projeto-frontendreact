@@ -1,16 +1,15 @@
-import React from "react";
-import { CartStyles } from "./CartStyle";
 import Itens from "../Items/Items";
+import { CartStyle } from "./CartStyle";
+import React from "react";
 
 function Cart(props) {
   const { cart } = props;
   const { amount } = props;
   const { removeCart } = props;
-  const { produto } = props;
 
   return (
-    <CartStyles>
-      <h1>Carrinho</h1>
+    <CartStyle>
+      <h1>Viagens</h1>
       {cart.map((produto) => {
         return (
           <Itens
@@ -25,13 +24,9 @@ function Cart(props) {
           />
         );
       })}
-      
-      <p>
-        Valor total:{" "}
-        {amount.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}{" "}
-      </p>
-        <button onClick={() => removeCart({ produto })}>Remover</button>
-    </CartStyles>
+
+      <p>Valor total: R$ {amount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+    </CartStyle>
   );
 }
 export default Cart;
