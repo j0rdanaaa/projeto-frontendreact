@@ -58,5 +58,4 @@ function Filter({
     </Filters>
   );
 }
-
 export default Filter;
